@@ -17,3 +17,5 @@ yarn dev
 This project uses Next 14 app directory and Server Components to utilize latest Next.js features. This app is a personal website with aggregator of JavaScript related conferences from all over the world.
 
 The data is scraped from [https://confs.tech/](https://confs.tech/) using [Puppeteer](https://pptr.dev/) and served to the client. The data is scraped on the edge and cached for 24h. The data is then served to the client from the cache. Sub-route dependent on the scraper is revalidated every 24h.
+
+To utilize scraping outside your local environment you need a virtual HTML renderer such as [Browserless](https://www.browserless.io/) which this project is using. Browserless provides headless Chrome browser environment, which Puppeteer can scrape through. Because the site I'm trying to scrape is a Single-Page Application there is [important Puppeteer setting](https://pptr.dev/api/puppeteer.page.waitfornetworkidle/) which I needed to use.
