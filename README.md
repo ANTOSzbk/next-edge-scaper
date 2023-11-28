@@ -1,1 +1,0 @@
-# next-edge-scaper
